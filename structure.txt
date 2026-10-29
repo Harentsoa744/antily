@@ -1,0 +1,185 @@
+﻿D:\S5\ARCHITECTURE-MR TAHINA\ANTILY
+|   init.sql
+|   structure.txt
+|   
++---nestjs
+|   |   .env.example
+|   |   .gitignore
+|   |   .prettierrc
+|   |   eslint.config.mjs
+|   |   nest-cli.json
+|   |   package.json
+|   |   README.md
+|   |   tsconfig.build.json
+|   |   tsconfig.json
+|   |   
+|   +---src
+|   |   |   app.controller.spec.ts
+|   |   |   app.controller.ts
+|   |   |   app.module.ts
+|   |   |   app.service.ts
+|   |   |   main.ts
+|   |   |   
+|   |   +---branch
+|   |   |   |   branch.controller.ts
+|   |   |   |   branch.module.ts
+|   |   |   |   branch.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-branch.dto.ts
+|   |   |   |       update-branch.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           branch.entity.ts
+|   |   |           
+|   |   +---entities
+|   |   |       .gitkeep
+|   |   |       
+|   |   +---member
+|   |   |   |   member.controller.ts
+|   |   |   |   member.module.ts
+|   |   |   |   member.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-member.dto.ts
+|   |   |   |       update-member.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           member.entity.ts
+|   |   |           
+|   |   +---membership
+|   |   |   |   membership.controller.ts
+|   |   |   |   membership.module.ts
+|   |   |   |   membership.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-membership.dto.ts
+|   |   |   |       update-membership.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           membership.entity.ts
+|   |   |           
+|   |   +---membership-fee
+|   |   |   |   membership-fee.controller.ts
+|   |   |   |   membership-fee.module.ts
+|   |   |   |   membership-fee.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-membership-fee.dto.ts
+|   |   |   |       update-membership-fee.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           membership-fee.entity.ts
+|   |   |           
+|   |   +---membership-payment
+|   |   |   |   membership-payment.controller.ts
+|   |   |   |   membership-payment.module.ts
+|   |   |   |   membership-payment.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-membership-payment.dto.ts
+|   |   |   |       update-membership-payment.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           membership-payment.entity.ts
+|   |   |           
+|   |   +---membership-year
+|   |   |   |   membership-year.controller.ts
+|   |   |   |   membership-year.module.ts
+|   |   |   |   membership-year.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-membership-year.dto.ts
+|   |   |   |       update-membership-year.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           membership-year.entity.ts
+|   |   |           
+|   |   +---role
+|   |   |   |   role.controller.ts
+|   |   |   |   role.module.ts
+|   |   |   |   role.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-role.dto.ts
+|   |   |   |       update-role.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           role.entity.ts
+|   |   |           
+|   |   +---territory
+|   |   |   |   territory.controller.ts
+|   |   |   |   territory.module.ts
+|   |   |   |   territory.service.ts
+|   |   |   |   
+|   |   |   +---dto
+|   |   |   |       create-territory.dto.ts
+|   |   |   |       update-territory.dto.ts
+|   |   |   |       
+|   |   |   \---entities
+|   |   |           territory.entity.ts
+|   |   |           
+|   |   \---territory-level
+|   |       |   territory-level.controller.ts
+|   |       |   territory-level.module.ts
+|   |       |   territory-level.service.ts
+|   |       |   
+|   |       +---dto
+|   |       |       create-territory-level.dto.ts
+|   |       |       update-territory-level.dto.ts
+|   |       |       
+|   |       \---entities
+|   |               territory-level.entity.ts
+|   |               
+|   \---test
+|           app.e2e-spec.ts
+|           jest-e2e.json
+|           
+\---vue-crud
+    |   .env
+    |   .env.example
+    |   .gitignore
+    |   index.html
+    |   package.json
+    |   README.md
+    |   tsconfig.app.json
+    |   tsconfig.json
+    |   tsconfig.node.json
+    |   vite.config.ts
+    |   
+    +---public
+    |       favicon.svg
+    |       
+    \---src
+        |   App.css
+        |   App.vue
+        |   index.css
+        |   main.ts
+        |   
+        +---api
+        |       client.ts
+        |       
+        +---components
+        |       AppLayout.vue
+        |       
+        +---pages
+        |       BranchForm.vue
+        |       BranchList.vue
+        |       Login.vue
+        |       MemberForm.vue
+        |       MemberList.vue
+        |       MembershipFeeForm.vue
+        |       MembershipFeeList.vue
+        |       MembershipPaymentForm.vue
+        |       MembershipPaymentList.vue
+        |       MembershipYearForm.vue
+        |       MembershipYearList.vue
+        |       Register.vue
+        |       RoleForm.vue
+        |       RoleList.vue
+        |       TerritoryLevelForm.vue
+        |       TerritoryLevelList.vue
+        |       
+        \---router
+                index.ts
+                

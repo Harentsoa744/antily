@@ -1,0 +1,442 @@
+/* ---------------------------------------------------------------------------
+   Thème : sidebar claire + panneau principal blanc, accent bleu indigo
+--------------------------------------------------------------------------- */
+
+:root {
+  --bg: #f6f6f8;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --text: #0f1115;
+  --text-muted: #6b7280;
+  --primary: #3b5bdb;
+  --primary-hover: #364fc7;
+  --primary-soft: #eef2ff;
+  --primary-text: #2b3fc2;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --success: #15803d;
+  --success-soft: #f0fdf4;
+  --success-border: #bbf7d0;
+  --warning: #b45309;
+  --warning-soft: #fff7ed;
+  --warning-border: #fed7aa;
+  --sidebar-width: 264px;
+  --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary-text);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Structure
+--------------------------------------------------------------------------- */
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ---------------------------------------------------------------------------
+   Sidebar
+--------------------------------------------------------------------------- */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: var(--sidebar-width);
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px 16px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+.sidebar-brand::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #3b5bdb, #1e293b);
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.sidebar-nav a:hover {
+  background: rgba(15, 17, 21, 0.05);
+  text-decoration: none;
+}
+.sidebar-nav a.active {
+  background: var(--surface);
+  color: var(--primary-text);
+  box-shadow: 0 1px 2px rgba(15, 17, 21, 0.08), 0 0 0 1px rgba(15, 17, 21, 0.04);
+}
+
+.sidebar-footer {
+  padding: 12px 8px 0;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.sidebar-footer p {
+  margin: 0 0 6px;
+}
+.sidebar-footer a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+.sidebar-footer a:hover {
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------------------------
+   Zone principale
+--------------------------------------------------------------------------- */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 16px;
+  box-shadow: 0 1px 3px rgba(15, 17, 21, 0.04);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-action {
+  padding: 6px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+}
+.topbar-action:hover {
+  background: var(--bg);
+  text-decoration: none;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+}
+
+/* ---------------------------------------------------------------------------
+   En-tête de page
+--------------------------------------------------------------------------- */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------------------------------------------------------------------------
+   Boutons
+--------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(15, 17, 21, 0.12);
+  transition: background 0.12s ease;
+}
+.btn:hover {
+  background: var(--primary-hover);
+  text-decoration: none;
+}
+.btn.secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+.btn.secondary:hover {
+  background: var(--bg);
+}
+.btn.danger {
+  background: var(--surface);
+  color: var(--danger);
+  border-color: var(--danger-border);
+  box-shadow: none;
+}
+.btn.danger:hover {
+  background: var(--danger-soft);
+}
+
+/* ---------------------------------------------------------------------------
+   Carte + tableau
+--------------------------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+.card table {
+  border: none;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  vertical-align: middle;
+}
+th {
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+tbody tr:hover {
+  background: #fafafb;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Colonne d'actions (dernière cellule) */
+td:last-child {
+  display: table-cell;
+  white-space: nowrap;
+  text-align: right;
+}
+td:last-child a {
+  margin-right: 8px;
+  font-weight: 500;
+}
+td:last-child .btn {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------------------------
+   Badges de statut (facultatif)
+--------------------------------------------------------------------------- */
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--text);
+}
+.badge.success {
+  background: var(--success-soft);
+  border-color: var(--success-border);
+  color: var(--success);
+}
+.badge.warning {
+  background: var(--warning-soft);
+  border-color: var(--warning-border);
+  color: var(--warning);
+}
+.badge.danger {
+  background: var(--danger-soft);
+  border-color: var(--danger-border);
+  color: var(--danger);
+}
+
+/* ---------------------------------------------------------------------------
+   Formulaires
+--------------------------------------------------------------------------- */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+form input,
+form select,
+form textarea {
+  padding: 9px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--surface);
+  color: var(--text);
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.15);
+}
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ---------------------------------------------------------------------------
+   États vides / erreurs
+--------------------------------------------------------------------------- */
+
+.empty-state {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 24px 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Bloc maître-détail (fiche de modification) : lignes rattachées à
+   l'enregistrement en cours, ex. les lignes d'une commande.
+--------------------------------------------------------------------------- */
+
+.detail-block {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.detail-block h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive
+--------------------------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .app-shell {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .main {
+    margin-top: 0;
+    border-left: none;
+    border-radius: 0;
+  }
+  .main-content,
+  .topbar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
